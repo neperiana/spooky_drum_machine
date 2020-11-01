@@ -18,21 +18,23 @@ class App extends Component {
     super();
     this.state = {
       is_on: true,
-      display_text: '',
+      display_text: 'it\'s spooky out here ...',
       key: '',
       clip: '',
     };
     this.handleInteraction = this.handleInteraction.bind(this);
+    this.handleButtonPress = this.handleButtonPress.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
-  handleInteraction(event) {
-    let newKey = event.target.id;
-    let newText = sounds[newKey].text;
-    let newClip = sounds[newKey].url;
+  handleInteraction(key) {
+    let newText = sounds[key].text;
+    let newClip = sounds[key].url;
 
     this.setState({ 
       display_text: newText,
-      key: newKey,
+      key: key,
       clip: newClip,
     }, () => {
       const sound = document.getElementsByClassName('clip')[0];
@@ -40,9 +42,24 @@ class App extends Component {
     });
   }
   handleToggle(event) {
+    let newText = event ? 'back on!' : '...and we are off.'
     this.setState({
-      is_on: event
+      is_on: event,
+      display_text: newText,
     });
+  }
+  handleButtonPress(event){
+    let key = event.target.id;
+    this.handleInteraction(key);
+  }
+  handleKeyPress(event){
+    let key = event.key.toUpperCase();
+    if (['S','P','O','U','K','Y'].includes(key)) {
+      document.getElementById(key).click();
+    }
+  }
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress);
   }
   render() {
     return (
@@ -57,9 +74,9 @@ class App extends Component {
             text={this.state.display_text}
           />
           <ButtonsContainer 
-            onClick={this.handleInteraction}
+            onClick={this.handleButtonPress}
             is_disabled={!this.state.is_on} 
-            keyTrigger={this.state.key}
+            activeKey={this.state.key}
             clip={this.state.clip}
           />
         </div>
@@ -90,18 +107,19 @@ const ButtonsContainer = props => {
       <div id="buttons-container">
         <audio
           className='clip'
-          id={props.keyTrigger}
+          id={props.activeKey}
           src={props.clip}
         />
         {
           Object.keys(sounds).map(
-            ([key])=> 
+            ([k])=> 
               <Button 
                 variant="dark" 
                 disabled={props.is_disabled} 
                 onClick={props.onClick}
-                id={key}
-              >{key}</Button>
+                id={k}
+                key={k}
+              >{k}</Button>
               
           )
         }
