@@ -37,6 +37,12 @@
   padding: 30px;
 }
 
+@media (min-width: 1000px) {
+  #drum-machine {
+    width: 20vw;
+  }
+}
+
 #display {
   width: 90%;
   display: flex;
