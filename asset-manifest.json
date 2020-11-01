@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/spooky_drum_machine/static/css/main.f7567565.chunk.css",
+    "main.js": "/spooky_drum_machine/static/js/main.d680c5d3.chunk.js",
+    "main.js.map": "/spooky_drum_machine/static/js/main.d680c5d3.chunk.js.map",
+    "runtime-main.js": "/spooky_drum_machine/static/js/runtime-main.1e5004c7.js",
+    "runtime-main.js.map": "/spooky_drum_machine/static/js/runtime-main.1e5004c7.js.map",
+    "static/css/2.20aa2d7b.chunk.css": "/spooky_drum_machine/static/css/2.20aa2d7b.chunk.css",
+    "static/js/2.07fc8418.chunk.js": "/spooky_drum_machine/static/js/2.07fc8418.chunk.js",
+    "static/js/2.07fc8418.chunk.js.map": "/spooky_drum_machine/static/js/2.07fc8418.chunk.js.map",
+    "index.html": "/spooky_drum_machine/index.html",
+    "static/css/2.20aa2d7b.chunk.css.map": "/spooky_drum_machine/static/css/2.20aa2d7b.chunk.css.map",
+    "static/css/main.f7567565.chunk.css.map": "/spooky_drum_machine/static/css/main.f7567565.chunk.css.map",
+    "static/js/2.07fc8418.chunk.js.LICENSE.txt": "/spooky_drum_machine/static/js/2.07fc8418.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/spooky_drum_machine/static/media/background.28c8a04c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1e5004c7.js",
+    "static/css/2.20aa2d7b.chunk.css",
+    "static/js/2.07fc8418.chunk.js",
+    "static/css/main.f7567565.chunk.css",
+    "static/js/main.d680c5d3.chunk.js"
+  ]
+}
