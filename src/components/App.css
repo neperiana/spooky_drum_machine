@@ -1,0 +1,76 @@
+/* Colour palette */
+:root {
+  --pale-silver: #D1C2BBff;
+  --raw-sienna: #D77F51ff;
+  --silver-sand: #A9BBBFff;
+  --feldgrau: #465048ff;
+  --outer-space-crayola: #313838ff;
+}
+
+#App {
+  background-color: #465048ff;
+  background-image: url("./../media/background.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  height: 100vh;
+  width: 100vw;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#drum-machine {
+  background-color: #465048ff;
+  height: 30vh;
+  width: 90vw;
+  margin: 5vw 5vh;
+  border-radius: 5% 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+#display {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#displayAlert {
+  width: 100%;
+}
+
+#buttons-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+footer {
+  padding: 10px 0px 0px 20px;
+  width: 100%;
+  height: 40px;
+  background-color: #465048ff;
+  color: #A9BBBFff;  
+}
+
+footer a {
+  color: #A9BBBFff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  font-weight: bold;
+}
