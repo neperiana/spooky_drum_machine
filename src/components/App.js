@@ -19,19 +19,24 @@ class App extends Component {
     this.state = {
       is_on: true,
       display_text: '',
+      key: '',
+      clip: '',
     };
     this.handleInteraction = this.handleInteraction.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
   }
   handleInteraction(event) {
-    let key = event.target.id;
+    let newKey = event.target.id;
+    let newText = sounds[newKey].text;
+    let newClip = sounds[newKey].url;
 
-    let audio = new Audio(sounds[key].url);
-    audio.play();
-
-    let text = sounds[key].text;
-    this.setState({
-      display_text: text
+    this.setState({ 
+      display_text: newText,
+      key: newKey,
+      clip: newClip,
+    }, () => {
+      const sound = document.getElementsByClassName('clip')[0];
+      sound.play();
     });
   }
   handleToggle(event) {
@@ -54,6 +59,8 @@ class App extends Component {
           <ButtonsContainer 
             onClick={this.handleInteraction}
             is_disabled={!this.state.is_on} 
+            keyTrigger={this.state.key}
+            clip={this.state.clip}
           />
         </div>
         <footer>
@@ -81,6 +88,11 @@ const DisplayComponent = props => {
 const ButtonsContainer = props => {
   return (
       <div id="buttons-container">
+        <audio
+          className='clip'
+          id={props.keyTrigger}
+          src={props.clip}
+        />
         {
           Object.keys(sounds).map(
             ([key])=> 
@@ -90,6 +102,7 @@ const ButtonsContainer = props => {
                 onClick={props.onClick}
                 id={key}
               >{key}</Button>
+              
           )
         }
       </div>
