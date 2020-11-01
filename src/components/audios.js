@@ -14,7 +14,7 @@ const sounds = {
         text: 'I\'m coming for you! 🧟‍♂️',
         url: 'https://raw.githubusercontent.com/neperiana/spooky_drum_machine/master/src/media/Monster_Footsteps.mp3' 
     },
-    '0': {
+    'U': {
         id: 'swamp',
         text: '... 😟',
         url: 'https://raw.githubusercontent.com/neperiana/spooky_drum_machine/master/src/media/Swamp_Sounds.mp3' 
