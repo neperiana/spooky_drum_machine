@@ -17,7 +17,7 @@ const sounds = {
     'U': {
         id: 'swamp',
         text: '... 😟',
-        url: 'https://raw.githubusercontent.com/neperiana/spooky_drum_machine/master/src/media/Swamp_Sounds.mp3' 
+        url: 'https://raw.githubusercontent.com/neperiana/spooky_drum_machine/master/src/media/swamp.mp3' 
     },
     'K': {
         id: 'witch',
